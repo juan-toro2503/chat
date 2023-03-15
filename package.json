@@ -4,7 +4,7 @@
   "description": "we will learn how to make a server and how to send http request",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon --watch server.js",
+    "dev": "nodemon --watch .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
