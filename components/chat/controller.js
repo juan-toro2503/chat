@@ -1,25 +1,28 @@
 const store=require('./store')
 
 function addChat(users){
-    return new Promise((resolve,reject)=>{
-        if(!users){
-            reject('error al crear el chat')
-            return false
+  
+        if(!users || !Array.isArray(users)){
+            return Promise.reject('lista invalida')
+            
         }
         const chat={
             users:users,
         }
-        resolve(store.add(chat))
-        console.log(users)
+        return store.add(chat)
+     
 
-    })
+    
     
 
 }
- function getChats(userId){
-    return new Promise((resolve, reject) =>{
-        resolve(store.list(userId))
-    })
+ async function getChats(userId){
+    
+    console.log(store.list(userId))
+    let x=await store.list(userId).then()
+    return  x
+    
+   
    
         
          
